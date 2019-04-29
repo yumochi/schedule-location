@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 
 import numpy as np
-import pdb
+# import pdb
 
 class LocationRNN(nn.Module):
     """
@@ -85,10 +85,8 @@ class LocationRNN(nn.Module):
         # None is for initial hidden state
         packed_output, hidden = self.rnn(packed_input, hidden)
         out_rnn, _ = pad_packed_sequence(packed_output, batch_first=True)
-        # pdb.set_trace()
         out_rnn = self.drop_de(out_rnn)
         decoded = self.decoder(out_rnn.contiguous().view(out_rnn.size(0)*out_rnn.size(1), out_rnn.size(2)))    
-        # pdb.set_trace()
         return decoded.view(out_rnn.size(0), out_rnn.size(1), decoded.size(1)), hidden
     
     def init_hidden(self, batch_size):

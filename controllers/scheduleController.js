@@ -1,6 +1,4 @@
-const async = require('async');
 const fs = require('fs');
-const $ = require('jQuery');
 
 const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
@@ -204,9 +202,6 @@ exports.retrieve_json = function(req, res, next) {
                             let predictions = []
 
                             const commaSplitData = stdout.split(',');
-
-                            console.log(content.length)
-                            console.log(commaSplitData.length)
 
                             for (let i in commaSplitData){
                                 if (content[i] && commaSplitData[i])

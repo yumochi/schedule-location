@@ -1,0 +1,6 @@
+# Ignore folder
+public/assests/
+public/input/
+
+# Ignore file
+app.js
