@@ -1,6 +1,6 @@
 # schedule-location
 
-Welcome to Schedule Locations, a very basic UI to showcase result of location classification on construction schedules, using a combination of Pytorch, Express, Pug, MongoDB, and Node. The application meant to take a csv version of construction schedule and classify each word in relation to location level. A RNN is used for the classification and is capable of much more than illustrated here. This is meant to be a simple demonstration of combining js and python to create a GUI to work with neural nets.
+Welcome to Schedule Locations, a very basic UI to showcase result of location classification on construction schedules, using a combination of Pytorch, Express, Pug, MongoDB, and Node. The application meant to take a csv version of construction schedule and classify each word in relation to location level. A RNN is used for the classification and is capable of much more than illustrated here. This is meant to be a simple demonstration of combining js and python to create a GUI to work with neural nets. The original inspiration of the front end and database is based on the MDN tutorial for the local library app.
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ mkdir ./public/assets/
 mkdir ./public/input/
 ```
 
-setup mlab to store and retrieve information
+setup MLab to store and retrieve information
 
 go through the walkthrough to set up a simple database
 
@@ -61,49 +61,56 @@ Note that the userName and userPassword refer to the database you setup on mlab 
 
 run application on address in browser
 
-http://localhost:3000
+https://localhost:3000/
 
 ## Running the tests
 
-### Break down into end to end tests
+### Store Schedule CSV on to MLab
 
-Explain what these tests test and why
+This will show your that the application is sending info into your MLab databse
 
-```
-Give an example
-```
+- Copy a schedule of your choice into public/assets/
 
-### And coding style tests
+- Go to 
 
-Explain what these tests test and why
+- https://localhost:3000/
 
-```
-Give an example
-```
+- Upload the schedule with the file input
+
+- Submit the file 
+
+The application should redirect you to a new page where the information is displayed on an input table
+
+Go to your MLab database to see if the if is uploaded
+
+### Run Python Script to Produce Results
+
+This will show you that the app is successfully retrieving info from MLab and running the scripts
+
+- Click the RUN button on the page to process the uploaded schedule
+
+The application should again redirect you to a new page where each of the word in the activity description is color coded in term of their importance in relation to level in the schedule. 
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Currently this project is still being improved.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Express](https://expressjs.com/) - The web framework used
+* [MLab](https://mlab.com/) - Database used
+* [PUG](https://pugjs.org/api/getting-started.html) - Used to generate HTML
+* [PyTorch](https://pytorch.org/) - Used to create neural networks
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Feel free to work with our current code to explore and learn.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Yumo Chi** - *Initial work* - (https://github.com/yumochi)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Wilfredo Torres** - *Initial work* - (https://github.com/wtorresc)
 
 ## License
 
@@ -111,6 +118,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Hat tip to MDN for the tutorial and many other stackoverflow examples we tried.
