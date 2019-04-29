@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em Map Schedule Locations], a very basic UI to showcase result of location classification on construction schedules, using a combination of Pytorch, Express, and Pug
+
+  h2 Control
+  form(method='GET' action='/result')
+    div.form-group
+      label(for='scheduleName') Schedule:
+      input#scheduleName.form-control(type='text', name='scheduleName' value=(undefined===schedule.name ? '' : schedule.name))
+    button.btn.btn-primary(type='submit') Submit
+  h2 Results
+  div(id='scheduleDisplay')
+    table(style='width:100%', border='1')
+      tr#header_row()
+        th Activity ID
+        th Activity Name
+        th Activity Status
+        th WBS Code
+        th WBS Name
+        th Start Date
+        th End Date
+      each activity in schedule.activities
+        tr
+          td 
+            input(type='text' value=activity.activityId)
+          td
+            input(type='text' value=activity.activityName)
+          td
+            input(type='text' value=activity.activityStatus)
+          td
+            input(type='text' value=activity.wbsCode)
+          td
+            input(type='text' value=activity.wbsName)
+          td
+            input(type='text' value=activity.startDate)
+          td
+            input(type='text' value=activity.endDate)
+
+
+
+

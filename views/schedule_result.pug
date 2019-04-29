@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em Map Schedule Locations], a very basic UI to showcase result of location classification on construction schedules, using a combination of Pytorch, Express, and Pug
+
+  h2 Results
+  p.detail 
+  | Color Coding Legend : 
+  span(class = 'locLevel1')  Location Level 1
+  |
+  span.locLevel2  Location Level 2
+  |
+  span.locLevel3  Location Level 3
+  |
+  span.locLevel4  Location Level 4
+
+
+  div(id='scheduleDisplay')
+    table(style='width:100%', border='1')
+      tr#header_row()
+        th Activity Name
+      each activity in schedule
+        tr 
+          td 
+            p
+            | Result: 
+            each word in activity 
+              span(class='locLevel' + word.locLevel) #{word.word}
+              |          

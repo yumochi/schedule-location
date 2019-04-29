@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em Map Schedule Locations], a very basic UI to showcase result of location classification on construction schedules, using a combination of Pytorch, Express, and Pug
+
+  h2 Control
+  form(method='POST' enctype="multipart/form-data" action='/')
+    div.form-group
+      label(for='schedule-file') Schedule:
+      input#schedule-file.form-control(type='file', name='schedule-file')
+    button.btn.btn-primary(type='submit') Submit

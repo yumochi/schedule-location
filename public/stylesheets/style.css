@@ -1,0 +1,13 @@
+.sidebar-nav {
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+}
+
+p.detail { color:#4C4C4C;font-weight:bold;font-family:Calibri;font-size:20 }
+
+span.locLevel0 { color:#4C4C4C;font-weight:bold;font-family:Tahoma;font-size:20 }
+span.locLevel1 { color:#FF0000;font-weight:bold;font-family:Tahoma;font-size:20 }
+span.locLevel2 { color:#02A4D3;font-weight:bold;font-family:Tahoma;font-size:20 }
+span.locLevel3 { color:#FFAA1D;font-weight:bold;font-family:Tahoma;font-size:20 }
+span.locLevel4 { color:#63B76C;font-weight:bold;font-family:Tahoma;font-size:20 }
